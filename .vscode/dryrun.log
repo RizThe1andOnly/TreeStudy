@@ -2,10 +2,12 @@ make clean all --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees'
 rm -f /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/TreeStudy
 rm -f -r ./bin/*
-g++ -g -Wall -c  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStudy.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStructs.cpp -I/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/include
+g++ -g -Wall -c  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStudy.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStructs.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeCreator.cpp -I/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/include
 mv *.o ./bin
-g++ -g -Wall -c  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStudy.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStructs.cpp -I/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/include
+g++ -g -Wall -c  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStudy.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStructs.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeCreator.cpp -I/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/include
 mv *.o ./bin
-g++  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStudy.o  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStructs.o -o TreeStudy
+g++ -g -Wall -c  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStudy.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeStructs.cpp  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/src/TreeCreator.cpp -I/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/include
+mv *.o ./bin
+g++  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStudy.o  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStructs.o  /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeCreator.o -o TreeStudy
 make: Leaving directory '/mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees'
  

@@ -4,7 +4,11 @@
 SENDTONULL="/dev/null"
 CHECKFILETYPE=\.cpp
 
-# adds backslash after the name of a file/dir so that whether they are dir can be tested
+# recursively go through all directories and collect all .cpp files; methods to do so
+REQEXTENSION=".cpp"
+ISDIRTEXT="is a directory"
+
+## adds backslash after the name of a file/dir so that whether they are dir can be tested
 addBackSlash(){
     # argument for where the directory to be searched
     TOSEARCHDIR="$1"
@@ -18,10 +22,6 @@ addBackSlash(){
     
     echo $TOSEARCHDIR
 }
-
-# recursively go through all directories and collect all .cpp files
-REQEXTENSION=".cpp"
-ISDIRTEXT="is a directory"
 
 ## determine whether a given name is a directory or not:
 isDir(){
@@ -43,11 +43,7 @@ isDir(){
     fi
 }
 
-
-dirCppFiles (){
-    echo "${getDirContents $1}"
-}
-
+## recursive search through directory
 getDirContents () {
     returnContents=""
     pathPrefix="$1"
@@ -69,7 +65,8 @@ getDirContents () {
         # if the name has .cpp in it then collect it into a list and echo it
         if [[ $i =~ .*$CHECKFILETYPE ]]
         then
-            returnContents="${returnContents} ${pathPrefix}${backslashAddedName}"
+            # add the name without backslash to the list
+            returnContents="${returnContents} ${pathPrefix}${i}"
         fi
 
     done
@@ -77,4 +74,11 @@ getDirContents () {
     echo $returnContents
 }
 
-getDirContents $1
+
+# Driver code:
+
+## add backslash to original input if it is not there already
+inputDir=$(addBackSlash ${1})
+
+## generate .cpp file list
+getDirContents $inputDir

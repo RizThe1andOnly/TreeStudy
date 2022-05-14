@@ -1,6 +1,7 @@
 #include <iostream>
 #include "TreeStructs.h"
 
+
 template class Node<int>;
 template class BinaryNode<int>;
 

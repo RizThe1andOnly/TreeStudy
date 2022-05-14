@@ -24,7 +24,8 @@ TreeStudy : $(OBJS)
 	$(CC) $(OBJS) -o $(MAINAPPNAME)
 
 $(OBJS) :
-	$(CC) $(CPPFLAGS) $(SRCFILES) -I$(INCLUDEDIR)
+	$(eval GENERATED_SRC_FILES=$(shell ./scripts/getSrcFiles.sh $(PROJECTDIR)))
+	$(CC) $(CPPFLAGS) $(GENERATED_SRC_FILES) -I$(INCLUDEDIR)
 	mv *.o ./bin
 
 
@@ -32,5 +33,4 @@ $(OBJS) :
 clean:
 	rm -f $(PROJECTDIR)/$(MAINAPPNAME)
 	rm -f -r ./bin/*
-	
 

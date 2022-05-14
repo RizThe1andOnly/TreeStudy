@@ -5,8 +5,9 @@ make all clean all --print-data-base --no-builtin-variables --no-builtin-rules -
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri May 13 01:39:25 2022
+# Make data base, printed on Sat May 14 19:28:21 2022
 
 # Variables
 
@@ -15,7 +16,7 @@ make all clean all --print-data-base --no-builtin-variables --no-builtin-rules -
 # automatic
 ?F = $(notdir $?)
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
 # default
 .SHELLFLAGS := -c
 # environment
@@ -65,9 +66,7 @@ XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-f406ca5a-8d4f-4c8f-98bc-d04373fa81d9.sock
-# environment
-VSCODE_SERVER_TAR = /mnt/c/Users/risla/AppData/Local/Temp/vscode-remote-wsl/da15b6fd3ef856477bf6f4fb29ba1b7af717770d/vscode-server-stable-linux-x64.tar.gz
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-72c3d862-3ce9-4359-b52d-1348ce9cbd30.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -85,7 +84,7 @@ PWD = /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/12_interop
+WSL_INTEROP = /run/WSL/4331_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
@@ -176,10 +175,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=84/1024=8%, Rehash=0, Collisions=11/137=8%
+# Load=82/1024=8%, Rehash=0, Collisions=9/124=7%
 
 # Pattern-specific Variable Values
 
@@ -187,9 +184,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 63, inode 119345390125348222): 11 files, no impossibilities.
+# . (device 63, inode 119345390125348222): 12 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -199,30 +196,12 @@ MOTD_SHOWN = update-motd
 
 /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeCreator.o:
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
+#  Last modified 2022-05-14 17:27:15.0214808
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeCreator.o
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := 
-# automatic
-# | := 
-# automatic
-# < := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/19=11%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 27):
-	$(CC) $(CPPFLAGS) $(SRCFILES) -I$(INCLUDEDIR)
+	$(eval GENERATED_SRC_FILES=$(shell ./scripts/getSrcFiles.sh $(PROJECTDIR)))
+	$(CC) $(CPPFLAGS) $(GENERATED_SRC_FILES) -I$(INCLUDEDIR)
 	mv *.o ./bin
 
 all: TreeStudy
@@ -230,9 +209,7 @@ all: TreeStudy
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/11=0%
+#  Successfully updated.
 
 .PHONY: clean
 #  Implicit rule search has not been done.
@@ -248,7 +225,7 @@ all: TreeStudy
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-08 22:11:46.1461951
+#  Last modified 2022-05-14 17:26:48.7003061
 #  File has been updated.
 #  Successfully updated.
 
@@ -275,7 +252,6 @@ clean:
 # automatic
 # + := 
 # automatic
- 
 # | := 
 # automatic
 # < := 
@@ -285,53 +261,53 @@ clean:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/13=8%
-#  recipe to execute (from 'Makefile', line 33):
+#  recipe to execute (from 'Makefile', line 34):
 	rm -f $(PROJECTDIR)/$(MAINAPPNAME)
 	rm -f -r ./bin/*
-	
 
 TreeStudy: /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStudy.o /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStructs.o /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeCreator.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-08 03:26:59.3252684
+#  Last modified 2022-05-14 17:27:15.3857569
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/11=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 24):
 	$(CC) $(OBJS) -o $(MAINAPPNAME)
 
 /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStructs.o:
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-08 03:26:59.0329783
+#  Last modified 2022-05-14 17:27:14.4877888
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 27):
-	$(CC) $(CPPFLAGS) $(SRCFILES) -I$(INCLUDEDIR)
+	$(eval GENERATED_SRC_FILES=$(shell ./scripts/getSrcFiles.sh $(PROJECTDIR)))
+	$(CC) $(CPPFLAGS) $(GENERATED_SRC_FILES) -I$(INCLUDEDIR)
 	mv *.o ./bin
 
 /mnt/c/workspaces/C++_Learning-workspace/Cpp_Trees/bin/TreeStudy.o:
+ 
 #  Implicit rule search has not been done.
-#  Last modified 2022-05-08 03:26:58.6409482
+#  Last modified 2022-05-14 17:27:14.8810799
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 27):
-	$(CC) $(CPPFLAGS) $(SRCFILES) -I$(INCLUDEDIR)
+	$(eval GENERATED_SRC_FILES=$(shell ./scripts/getSrcFiles.sh $(PROJECTDIR)))
+	$(CC) $(CPPFLAGS) $(GENERATED_SRC_FILES) -I$(INCLUDEDIR)
 	mv *.o ./bin
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/34=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/33=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 21 / storage = 344 B / avg = 16 B
-# current buf: size = 8162 B / used = 344 B / count = 21 / avg = 16 B
+# strcache buffers: 1 (0) / strings = 22 / storage = 355 B / avg = 16 B
+# current buf: size = 8162 B / used = 355 B / count = 22 / avg = 16 B
 
-# strcache performance: lookups = 45 / hit rate = 53%
+# strcache performance: lookups = 45 / hit rate = 51%
 # hash-table stats:
-# Load=21/8192=0%, Rehash=0, Collisions=1/45=2%
-# Finished Make data base on Fri May 13 01:39:25 2022
+# Load=22/8192=0%, Rehash=0, Collisions=1/45=2%
+# Finished Make data base on Sat May 14 19:28:21 2022
 
  

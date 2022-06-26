@@ -11,7 +11,8 @@ SRCDIR = $(PROJECTDIR)/src
 SRCFILESRAW =\
 	TreeStudy.cpp\
 	TreeStructs.cpp\
-	TreeCreator.cpp
+	TreeCreator.cpp\
+	BinaryIntNode.cpp
 
 SRCFILES = $(patsubst %, $(SRCDIR)/%, $(SRCFILESRAW))
 OBJS = $(patsubst %.cpp, $(BINDIR)/%.o, $(SRCFILESRAW))

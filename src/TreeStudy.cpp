@@ -4,14 +4,23 @@
 
 
 int main() {
-    int x = 0;
-    int y = 2;
-    int z = x + y;
 
-    std::cout << "Trying to test out debug " << z << std::endl;
+    /* Create the root */
+    BinaryIntNode* root = new BinaryIntNode(0);
 
-    BinaryNode<int> bn;
-    bn.setRight();
+    /* Set the children */
+    root->setLeft(1);
+    root->setRight(2);
+
+    /* Try and get the children */
+    BinaryIntNode* leftKid = root->getLeft();
+    BinaryIntNode* rightKid = root->getRight();
+
+    /* Print out the data in retrieved node. */
+    std::cout << rightKid->getData() << std::endl;
+    std::cout << leftKid->getData() << std::endl;
+
+    delete(root);
 
     return 0;
 }
